@@ -10,7 +10,7 @@ Computing pairwise cosine similarity between all documents in a large corpus has
 
 ---
 
-## 🔍 Key Features
+## Key Features
 
 - **TF-IDF Vectorization** of all documents in the corpus
 - **Pairwise Cosine Similarity** between document vectors
@@ -38,6 +38,44 @@ Computing pairwise cosine similarity between all documents in a large corpus has
 - Document frequency vectors merged with `MPI_Allreduce`
 - Final cosine similarity is computed in parallel by dividing index pairs across processes
 
+---
+
+## Cluster Configurations
+
+### Light Cluster (Intra-Regional)
+- **Nodes**: 8 VMs
+- **vCPUs**: 2 per node
+- **RAM**: 8GB per node
+- **Region**: europe-west1-d
+
+### Fat Cluster (Intra-Regional)
+- **Nodes**: 2 VMs
+- **vCPUs**: 8 per node
+- **RAM**: 32GB per node
+- **Region**: us-central1-c
+
+### Light Cluster (Infra-Regional)
+- **Nodes**: 8 VMs in different continents
+- **vCPUs**: 2 per node
+- **RAM**: 8GB per node
+- **Regions**:
+  - northamerica-northeast2-b
+  - australia-southeast1-b
+  - me-central1-a
+  - asia-northeast3-c
+  - europe-north2-b
+  - africa-south1-c
+  - us-south1-a
+  - southamerica-east1-c
+
+### Fat Cluster (Infra-Regional)
+- **Nodes**: 2 high-performance VMs
+- **vCPUs**: 8 per node
+- **RAM**: 32GB per node
+- **Regions**:
+  - europe-southwest1-b
+  - northamerica-northeast1-c
+    
 ---
 
 ## Running the Code
